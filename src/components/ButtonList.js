@@ -2,7 +2,7 @@ import Button from "./Button"
 
 const ButtonList = () => {
   return (
-    <div className="flex overflow-x-auto ">
+    <div className="flex overflow-x-auto">
       <Button name="All" />
       <Button name="Trending" />
       <Button name="Gaming" />
