@@ -2,6 +2,9 @@ import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { useEffect, useState } from "react";
 import { SEARCH_API, YOUTUBE_SEARCH_API } from "../utils/constants";
+import { useSelector } from "react-redux";
+import { cacheResults } from "../utils/searchSlice";
+
 
 const Head = () => {
 
@@ -10,6 +13,8 @@ const Head = () => {
 
     const [suggestions, setSuggestions] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
+    const searchCache = useSelector(store => store.search);
+    const dispatch = useDispatch();
     
     useEffect(() => {
         
@@ -18,6 +23,20 @@ const Head = () => {
         // making an api call on every key press 
         // but if the difference betn 2 api's calls is <200ms
         // decline the API call
+
+        // searchCache = {
+        //   "iphone" : ["iphone 11", "iphone 14"]
+        // }
+
+        // searchQuery = iphone
+
+        if(searchCache[setSearchQuery]){
+          setSuggestions(searchCache[searchQuery])
+        }else{
+          getSearchSuggestions();
+        }
+
+
         const timer = setTimeout(() => getSearchSuggestions(), 200);
 
 
@@ -44,29 +63,15 @@ const Head = () => {
     const url = `${SEARCH_API}${searchQuery}`; // Make sure the API supports JSONP and expects a callback parameter
     jsonp(url, (response) => {
       setSuggestions(response[1]);
-      console.log(response);
-    //   dispatch(
-    //     cacheSuggestions({
-    //       [searchQuery]: response[1],
-    //     })
-    //   );
+      // console.log(response);
+
+      dispatch(cacheResults({[searchQuery] : response[1]}));
     });
   };
     
-    // const getSearchSuggestions = async () => {
-        
-    //     console.log(searchQuery , "Search query data");
-    //     const URL = `${SEARCH_API}${searchQuery}`; // Make sure the API supports JSONP and expects a callback parameter
-    //     const data = await fetch(URL);
-    //     // const json = await data.json();
-    //     console.log("data >>>>", data);
-    // }
-    
-    const dispatch = useDispatch();
-
-    const toggleMenuHandler = () => {
-        dispatch(toggleMenu());
-    }
+  const toggleMenuHandler = () => {
+      dispatch(toggleMenu());
+  }
 
   return (
     <div className="grid grid-flow-col p-5 m-2 shadow-lg ">
@@ -92,8 +97,6 @@ const Head = () => {
             </ul>
           </div> 
       }
-
-
 
         </div>
 

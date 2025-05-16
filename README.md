@@ -11,4 +11,14 @@ Performances :
 
 Debouncing with 200ms
 - if difference between 2 key strokes is "200ms" - Decline the api call
->200ms make an api call (migh need suggestions)
+<200ms make an api call (migh need suggestions)
+
+Cache : 
+time complexity to search in the array = 0(n);
+time complexity to search in object = 0(1);
+
+array.indexOf();
+
+[i, ip, iph, ipho, iphon, iphone]
+
+new Map();
