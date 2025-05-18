@@ -65,7 +65,7 @@ const Head = () => {
       setSuggestions(response[1]);
       // console.log(response);
 
-      dispatch(cacheResults({[searchQuery] : response[1]}));
+      dispatch(cacheResults({[searchQuery] : response [1]}));
     });
   };
     
