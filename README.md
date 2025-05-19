@@ -22,3 +22,5 @@ array.indexOf();
 [i, ip, iph, ipho, iphon, iphone]
 
 new Map();
+
+Understood the Web socket and API Polling concept and applying in my app

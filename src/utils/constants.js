@@ -4,6 +4,8 @@ export const YOUTUBE_VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/vid
 
 // export const YOUTUBE_SEARCH_API = "https://api.allorigins.win/raw?url=https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
-export const YOUTUBE_SEARCH_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=IPHONE&callback=jsonp_callback_71459"
+export const YOUTUBE_SEARCH_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=IPHONE&callback=jsonp_callback_71459";
 
-export const SEARCH_API = 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
+export const SEARCH_API = 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=';
+
+
