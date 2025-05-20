@@ -139,10 +139,6 @@ const commentsData = [
       <Comment key={index} data={comment} />
 
       <div className="pl-5 border border-l-black ml-2">
-        {/* <Comment key={index} data={comment} /> 
-        <Comment key={index} data={comment} />
-        <Comment key={index} data={comment} />
-        <Comment key={index} data={comment} /> */}
         <CommentsList comments={comment.replies} />
       </div>
     </div>
