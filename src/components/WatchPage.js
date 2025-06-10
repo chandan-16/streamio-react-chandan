@@ -16,23 +16,27 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col m-auto w-full">
-      <div className="px-10 flex">
-        <div className="">
-          <iframe
-            width="1200"
-            height="600"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className=""
-          ></iframe>
+    <div className="container mx-auto mt-4 px-4 sm:px-6 md:px-8 flex flex-col space-y-6">
+
+      <div className="w-full flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-8">
+        <div className="w-full lg:flex-1">
+          <div className="aspect-video w-full bg-black rounded-lg overflow-hidden">
+            <iframe
+              width="1200"
+              height="600"
+              src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+              title="YouTube video player"
+              // frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+
         </div>
 
-      <div className="w-full pl-7 pt-1">
+      <div className="w-full lg:w-1/3">
         <LiveChat />
       </div>
       </div> 

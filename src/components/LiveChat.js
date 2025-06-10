@@ -38,9 +38,12 @@ const LiveChat = () => {
 
   return (
     <>
-    <div>
+    <div className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto mt-4">
     <h1 className="pt-1 pl-4 text-red-500 font-bold">Live Chat :</h1>
-    <div className="border-black bg-slate-100 rounded-lg h-150 pl-10 text-bolder pt-5 overflow-y-scroll flex flex-col-reverse">
+    <div className="
+        flex flex-col-reverse overflow-y-auto bg-slate-100
+        rounded-lg p-4 h-96 md:h-[500px]
+        space-y-2 space-y-reverse">
         {/* Not a good pactice to use index as key  */}
         {
             chatMessages.map((c, index) => <ChatMessage key={index} name={c.name} message={c.message} />)
@@ -48,9 +51,11 @@ const LiveChat = () => {
     </div> 
     </div>
 
-    <form onSubmit={handleFromLiveMsg} className="w-full p-2 ml-2 border border-black mx-auto mt-4 rounded">
-        <input onChange={(e) => setLiveMessage(e.target.value)} className="w-278 px-4 py-2 border" type="text" placeholder="enter message" value={liveMessage} />
-        <button type="submit" className="px-6 py-2 mx-2 bg-green-600 text-white rounded">Send</button>
+    <form onSubmit={handleFromLiveMsg} className="
+        max-w-full md:max-w-2xl lg:max-w-3xl mx-auto mt-4 px-4 py-2
+        border border-black rounded flex space-x-2 items-center">
+        <input onChange={(e) => setLiveMessage(e.target.value)} className="flex-1 border border-gray-400 rounded px-4 py-2 focus:outline-none" type="text" placeholder="enter message" value={liveMessage} />
+        <button type="submit" className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500 transition">Send</button>
     </form>
     </>
   )

@@ -28,10 +28,14 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div>
-        <Head />
+      {/* <div>
         <RouterProvider router={appRouter}/>
-      </div>
+        </div> */}
+      <RouterProvider router={appRouter}>
+        <Head /> 
+
+
+      </RouterProvider>
     </Provider>
 
   );

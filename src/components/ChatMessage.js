@@ -1,9 +1,11 @@
 const ChatMessage = ({name, message}) => {
   return (
-    <div className="flex item-center shadow p-2 mr-10">
-        <img className="h-8 rounded-full" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user" />
-        <span className="font-bold text-[16px] px-2 text-gray-800">{name}</span>
-        <span className="text-[13px break-words overflow-x-x-hidden">{message}</span>
+    <div className="flex items-center space-x-3 p-3 m-2 shadow-lg max-w-fullmd:rounded-lg lg:max-w-lg">
+        <img className="h-10 w-10 rounded-full flex-shrink-0" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user" />
+        <div className="flex-1 min-w-0">
+          <p className="font-bold text-base text-gray-800">{name}</p>
+          <p className="text-sm text-gray-700 break-words">{message}</p>
+        </div>
     </div>
   )
 }

@@ -89,3 +89,100 @@ const Sidebar = () => {
 }
 
 export default Sidebar
+
+
+
+// import { useSelector } from "react-redux"
+// import { NavLink } from "react-router-dom"
+// import icons from "../assets/" // assume all icons imported here
+
+// export { default as homeIcon } from "./home.svg";
+// export { default as shortsIcon } from "..assets/shortsIcon";
+// export { default as subscriptionsIcon } from "..assets/shortsIcon";
+// // ...repeat for all other icons
+// export { default as fashionAndBeautyIcon } from "./fashionAndBeauty.svg";
+// export { default as settingsIcon } from "./settings.svg";
+// export { default as reportHistoryIcon } from "./reportHistory.svg";
+
+// const navGroups = [
+//   [
+//     { to: "/", icon: icons.homeIcon, label: "Home" },
+//     { to: "/", icon: icons.shortsIcon, label: "Shorts" },
+//     { to: "/", icon: icons.subscriptionsIcon, label: "Subscriptions" },
+//   ],
+//   // Add other groups similarly...
+//   [
+//     { to: "/", icon: icons.libraryIcon, label: "Library" },
+//     { to: "/", icon: icons.historyIcon, label: "History" },
+//     // ...
+//   ],
+//   [
+//     { to: "/", icon: icons.redLiveIcon, label: "Scary Fun", isLive: true },
+//     { to: "/", icon: icons.redLiveIcon, label: "Crime Tak", isLive: true },
+//     { to: "/", icon: icons.showMoreIcon, label: "Show More..." },
+//   ],
+//   [
+//     { to: "/", icon: icons.trendingIcon, label: "Trending" },
+//     // ...
+//   ],
+//   [
+//     { to: "/", icon: icons.settingsIcon, label: "Settings" },
+//     { to: "/", icon: icons.reportHistoryIcon, label: "Report History" },
+//     // ...
+//   ],
+// ]
+
+// const Sidebar = () => {
+
+
+
+//   const isOpen = useSelector(store => store.app.isMenuOpen)
+//   if (!isOpen) return null
+
+//   return (
+//     <aside className="
+//       fixed inset-y-0 left-0 z-30 bg-white shadow-lg transform
+//       transition-transform duration-200 ease-in-out
+//       w-64
+//       -translate-x-full lg:translate-x-0 lg:static
+//     ">
+//       <div className="h-full overflow-y-auto px-4 py-6 flex flex-col">
+//         {navGroups.map((group, i) => (
+//           <React.Fragment key={i}>
+//             {i > 0 && <hr className="my-4 border-gray-200" />}
+//             {(i === 3 || i === 4) && (
+//               <h2 className="font-medium mb-2">
+//                 {i === 3 ? "Explore" : "More From YouTube"}
+//               </h2>
+//             )}
+//             <ul>
+//               {group.map(({ to, icon, label, isLive }, j) => (
+//                 <li key={j} className="mb-1">
+//                   <NavLink
+//                     to={to}
+//                     end
+//                     className="flex items-center p-2 rounded-lg hover:bg-gray-100 transition"
+//                   >
+//                     <img src={icon} alt={label} className="w-6 h-6 mr-3" />
+//                     <span className="text-sm font-medium">
+//                       {label}
+//                     </span>
+//                     {isLive && (
+//                       <img
+//                         src={icons.redLiveIcon}
+//                         alt="Live"
+//                         className="w-4 h-4 ml-auto"
+//                       />
+//                     )}
+//                   </NavLink>
+//                 </li>
+//               ))}
+//             </ul>
+//           </React.Fragment>
+//         ))}
+//       </div>
+//     </aside>
+//   )
+// }
+
+// export default Sidebar

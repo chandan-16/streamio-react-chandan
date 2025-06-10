@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { SEARCH_API, YOUTUBE_SEARCH_API } from "../utils/constants";
 import { useSelector } from "react-redux";
 import { cacheResults } from "../utils/searchSlice";
-
+import { NavLink } from "react-router-dom";
+// import logo from "../assets/";
 
 const Head = () => {
+    const [navOpen, setNavOpen] = useState(false);
 
-    
     const [searchQuery, setSearchQuery] = useState("");
 
     const [suggestions, setSuggestions] = useState([]);
@@ -36,9 +37,7 @@ const Head = () => {
           getSearchSuggestions();
         }
 
-
         const timer = setTimeout(() => getSearchSuggestions(), 200);
-
 
         return () => {
             clearTimeout(timer); // ✅ fixed
@@ -68,43 +67,57 @@ const Head = () => {
       dispatch(cacheResults({[searchQuery] : response [1]}));
     });
   };
-    
+
   const toggleMenuHandler = () => {
       dispatch(toggleMenu());
   }
 
+  const handleSuggestionClick = (searchText) => {
+ 
+console.log("SearchText",searchText)
+  }
+
   return (
-    <div className="grid grid-flow-col p-5 m-2 shadow-lg ">
-        <div className="flex text-center p-2 col-span-1">
-            <img onClick={() => toggleMenuHandler()} className="h-8 cursor-pointer" src="https://icons.veryicon.com/png/o/miscellaneous/linear-icon-45/hamburger-menu-4.png" alt="menu button" />
-            <img className="h-8 mx-2" src="https://images.icon-icons.com/3053/PNG/512/stremio_macos_bigsur_icon_189687.png" alt="streamio logo" />
-            <p className="text-center  text-2xl pt-0.5">
-                <span className="font-bold ">STREAM</span>
-                <span className="text-violet-900">IO</span>
-            </p>
-        </div>
+    <header className="bg-white shadow sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+        {/* Logo */}
+        <NavLink to="/" className="flex items-center">
+          {/* <img src={logo} alt="Streamio Logo" className="h-8 w-auto" /> */}
+          <span className="ml-2 text-2xl font-bold">STREAM<span className="text-violet-900">IOO</span></span>
+        </NavLink>
 
-        <div className="col-span-10 text-center px-10">
-            <div>
-            <input onChange={(e) => setSearchQuery(e.target.value)} onFocus={() => setShowSuggestions(true)} onBlur={() => setShowSuggestions(false)} className="w-1/2 border border-gray-400 p-2 rounded-l-full " type="text" value={searchQuery} />
-            <button className="border border-gray-100 px-5 py-2  rounded-r-full "><i className="bi bi-search text-bold"></i></button>
-        </div>
+        {/* Hamburger for mobile */}
+        <button
+          className="md:hidden p-2 focus:outline-none"
+          onClick={() => setNavOpen(!navOpen)}
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor">
+            {navOpen ? (
+              <path strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
 
-      { showSuggestions &&
-          <div className="fixed bg-white py-2 px-5 w-96 text-left w-[56rem] shadow-lg rounded-lg ml-110 border border-gray-100">
-            <ul>
-              { suggestions.map(s => (<li key={s}><i className="bi bi-search py-2 shadow-sm hover:bg-gray-100"></i>{s}</li>)) }
-            </ul>
-          </div> 
-      }
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-6">
+          <NavLink to="/" className="text-gray-700 hover:text-violet-900">Home</NavLink>
+          <NavLink to="/about" className="text-gray-700 hover:text-violet-900">About</NavLink>
+          <NavLink to="/contact" className="text-gray-700 hover:text-violet-900">Contact</NavLink>
+        </nav>
+      </div>
 
-        </div>
-
-        <div className="col-span-1 flex justify-between p-2">
-            <span></span>
-            <img className="h-8 " src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user" />
-        </div>
-    </div>
+      {/* Mobile Navigation (slide-down) */}
+      {navOpen && (
+        <nav className="md:hidden bg-white shadow-md">
+          <NavLink to="/" className="block px-4 py-2">Home</NavLink>
+          <NavLink to="/about" className="block px-4 py-2">About</NavLink>
+          <NavLink to="/contact" className="block px-4 py-2">Contact</NavLink>
+        </nav>
+      )}
+    </header>
+    
   )
 }
 
