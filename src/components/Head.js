@@ -74,50 +74,29 @@ const Head = () => {
 
   const handleSuggestionClick = (searchText) => {
  
-console.log("SearchText",searchText)
+    console.log("SearchText",searchText)
   }
 
   return (
-    <header className="bg-white shadow sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+    
+   <header className="bg-white shadow sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
           {/* <img src={logo} alt="Streamio Logo" className="h-8 w-auto" /> */}
-          <span className="ml-2 text-2xl font-bold">STREAM<span className="text-violet-900">IOO</span></span>
+          <span className="ml-2 text-2xl font-bold">
+            STREAM<span className="text-violet-900">IOO</span>
+          </span>
         </NavLink>
 
-        {/* Hamburger for mobile */}
-        <button
-          className="md:hidden p-2 focus:outline-none"
-          onClick={() => setNavOpen(!navOpen)}
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor">
-            {navOpen ? (
-              <path strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
+      <ul className="flex">
+        <li><i className="bi bi-bell-fill text-xl"></i></li>
+        <li><i className="bi mx-4 bi-camera-reels-fill text-xl"></i></li>
+        <li><i className="bi bi-person-circle text-xl"></i></li>
+      </ul>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
-          <NavLink to="/" className="text-gray-700 hover:text-violet-900">Home</NavLink>
-          <NavLink to="/about" className="text-gray-700 hover:text-violet-900">About</NavLink>
-          <NavLink to="/contact" className="text-gray-700 hover:text-violet-900">Contact</NavLink>
-        </nav>
       </div>
-
-      {/* Mobile Navigation (slide-down) */}
-      {navOpen && (
-        <nav className="md:hidden bg-white shadow-md">
-          <NavLink to="/" className="block px-4 py-2">Home</NavLink>
-          <NavLink to="/about" className="block px-4 py-2">About</NavLink>
-          <NavLink to="/contact" className="block px-4 py-2">Contact</NavLink>
-        </nav>
-      )}
-    </header>
-    
+    </header>    
   )
 }
 

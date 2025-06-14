@@ -40,7 +40,7 @@ const Sidebar = () => {
           <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={shortsIcon} alt="Shorts" /> Shorts</NavLink ></li>
           <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={subscriptionsIcon} alt="Subscriptions" /> Subscriptions</NavLink ></li>
       </ul>
-      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-78" />
 
       <ul>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={libraryIcon} alt="Library" /> Library</NavLink ></li>
@@ -50,14 +50,14 @@ const Sidebar = () => {
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={likedVideosIcon} alt="LikedVideos" /> Liked Videos</NavLink ></li>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={showMoreIcon} alt="ShowMore" /> Show More</NavLink ></li>
       </ul>
-      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-78" />
 
       <ul>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> Scary Fun <img className='inline-block align-bottom mr-3' src={redLiveIcon} alt="ScaryFun" /> </NavLink ></li>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> Crime Tak <img className='inline-block align-bottom mr-3' src={redLiveIcon} alt="CrimeTak" /> </NavLink ></li>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> Show More... <img className='inline-block align-bottom mr-3' src={showMoreIcon} alt="ShowMore" /> </NavLink ></li>
       </ul>
-      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-78" />
 
       <h1 className='font-medium pt-5'>Explore</h1> 
 
@@ -73,7 +73,7 @@ const Sidebar = () => {
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={learningIcon} alt="Learning" /> Learning</NavLink ></li>
         <li className='my-1 p-1 py-2 hover:bg-gray-100 cursor-pointer rounded-lg'><NavLink  to={'/'}> <img className='inline-block align-bottom mr-3' src={fashionAndBeautyIcon} alt="FashionBeauty" /> Fashion & Beauty</NavLink ></li>
       </ul> 
-      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
+      <hr className="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700 w-78" />
 
       <h1 className='font-medium pt-5'>More From Youtube</h1>
 

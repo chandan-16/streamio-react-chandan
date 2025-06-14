@@ -27,7 +27,8 @@ function App() {
   }])
 
   return (
-    <Provider store={store}>
+    <>
+        <Provider store={store}>
       {/* <div>
         <RouterProvider router={appRouter}/>
         </div> */}
@@ -37,6 +38,8 @@ function App() {
 
       </RouterProvider>
     </Provider>
+    </>
+
 
   );
 }
