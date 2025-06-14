@@ -7,13 +7,11 @@ import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
-  // console.log(searchParams.get("v"));
-
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(closeMenu());
-  }, []);
+  },);
 
   return (
     <div className="container mx-auto mt-4 px-4 sm:px-6 md:px-8 flex flex-col space-y-6">
