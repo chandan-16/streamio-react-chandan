@@ -34,7 +34,7 @@ const LiveChat = () => {
         },2000);
 
         return () => clearInterval(i)
-    },[addMessage]) 
+    },[dispatch]) 
 
   return (
     <>
