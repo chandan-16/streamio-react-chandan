@@ -21,20 +21,16 @@ const LiveChat = () => {
         setLiveMessage("");
     }
 
-    useEffect(() => {
-        const i =  setInterval(() => {
-            // API Polling 
-            console.log("API Polling")
+useEffect(() => {
+  const i = setInterval(() => {
+    dispatch(addMessage({
+      name: generateRandomName(),
+      message: makeRandomMessage(25)
+    }));
+  }, 2000);
 
-            dispatch(addMessage({
-                name : generateRandomName(),
-                message : makeRandomMessage(25)
-            }))
-
-        },2000);
-
-        return () => clearInterval(i)
-    },[dispatch]) 
+  return () => clearInterval(i);
+}, [dispatch]);
 
   return (
     <>
